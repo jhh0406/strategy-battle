@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>전략 대전</title>
+    <link rel="stylesheet" style="text/css" href="style.css">
+  </head>
+  <body>
+    <div id="main">
+      <h1>전략 대전</h1>
+      <button type="button" onClick="gameStart()">게임시작</button>
+      <br/>
+      <button type="button" onClick="tutorial()">게임방법</button>
+      <br/>
+      <img id="tier" style="width: 250px;" src="images/tier/unknown.PNG">
+      <br/>
+      <img id="tierScore" style="width: 250px;" src="images/hp/hp0.PNG">
+    </div>
+    <div id="inGame" style="display: none;">
+      <div id="characters">
+        <div id="player">
+          <img class="hp" id="player1Hp" src="images/hp/hp3.PNG">
+          <div>
+            <img class="btn" id="myBtn1" src="images/btn/unknown.PNG">
+            <img class="btn" id="myBtn2" src="images/btn/unknown.PNG">
+            <img class="btn" id="myBtn3" src="images/btn/unknown.PNG">
+          </div>
+        </div>
+        <div id="outcome">
+          대전 중
+        </div>
+        <div id="enemy">
+          <img class="hp" id="player2Hp" src="images/hp/hp3.PNG">
+          <div>
+            <img class="btn" id="enemyBtn1" src="images/btn/unknown.PNG">
+            <img class="btn" id="enemyBtn2" src="images/btn/unknown.PNG">
+            <img class="btn" id="enemyBtn3" src="images/btn/unknown.PNG">
+          </div>
+        </div>
+      </div>
+      <div id="controls">
+        <div>
+          <span id="select">
+            <img class="btn" onclick="atk()" src="images/btn/atk.PNG">
+            <img class="btn" onclick="dfc()" src="images/btn/dfc.PNG">
+            <img class="btn" onclick="rcv()" src="images/btn/rcv.PNG">
+            <img class="btn" onclick="reset()" src="images/btn/reset.PNG">
+          </span>
+          <img class="btn" onclick="ok()" src="images/btn/ok.PNG">
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
