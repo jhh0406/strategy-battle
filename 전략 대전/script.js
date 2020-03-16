@@ -57,6 +57,20 @@ function gameFinish() {
   gameEnd = false;
   drawTier();
 }
+function intHp() {
+  if (myHp <= 0) {
+    myHp = 0;
+  }
+  if (enemyHp <= 0) {
+    enemyHp = 0;
+  }
+  if (myHp >= 5) {
+    myHp = 5;
+  }
+  if (enemyHp >= 5) {
+    enemyHp = 5;
+  }
+}
 function drawHp(player, hp){
   if ( hp <= 0 ) {
     player.src = "images/hp/hp0.PNG";
@@ -75,18 +89,7 @@ function drawHp(player, hp){
 function hpCheck() {
   drawHp(player1Hp, myHp);
   drawHp(player2Hp, enemyHp);
-  if (myHp <= 0) {
-    myHp = 0;
-  }
-  if (enemyHp <= 0) {
-    enemyHp = 0;
-  }
-  if (myHp >= 5) {
-    myHp = 5;
-  }
-  if (enemyHp >= 5) {
-    enemyHp = 5;
-  }
+  intHp()
   if ( focus == 7 ) {
     if(myHp > enemyHp) {
       textChange("승리~");
@@ -98,14 +101,14 @@ function hpCheck() {
       textChange("무승부~");
     }
   }
-  if (myHp == 0) {
-    textChange("패배");
-    score--;
+  if (myHp == 0 && enemyHp == 0) {
+    textChange("무승부");
   } else if (enemyHp == 0) {
     textChange("승리");
     score += 2;
-  } else if (myHp == 0 && enemyHp == 0) {
-    textChange("무승부");
+  } else if (myHp == 0) {
+    textChange("패배");
+    score--;
   }
 }
 function check(btnA, btnB) {
