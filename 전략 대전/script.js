@@ -58,6 +58,23 @@ function gameFinish() {
   drawTier();
 }
 function drawHp(player, hp){
+  if ( hp <= 0 ) {
+    player.src = "images/hp/hp0.PNG";
+  } else if ( hp == 1 ) {
+    player.src = "images/hp/hp1.PNG";
+  } else if ( hp == 2 ) {
+    player.src = "images/hp/hp2.PNG";
+  } else if ( hp == 3 ) {
+    player.src = "images/hp/hp3.PNG";
+  } else if ( hp == 4 ) {
+    player.src = "images/hp/hp4.PNG";
+  } else if ( hp >= 5 ) {
+    player.src = "images/hp/hp5.PNG";
+  }
+}
+function hpCheck() {
+  drawHp(player1Hp, myHp);
+  drawHp(player2Hp, enemyHp);
   if (myHp <= 0) {
     myHp = 0;
   }
@@ -70,23 +87,6 @@ function drawHp(player, hp){
   if (enemyHp >= 5) {
     enemyHp = 5;
   }
-  if ( hp = 0 ) {
-    player.src = "images/hp/hp0.PNG";
-  } else if ( hp == 1 ) {
-    player.src = "images/hp/hp1.PNG";
-  } else if ( hp == 2 ) {
-    player.src = "images/hp/hp2.PNG";
-  } else if ( hp == 3 ) {
-    player.src = "images/hp/hp3.PNG";
-  } else if ( hp == 4 ) {
-    player.src = "images/hp/hp4.PNG";
-  } else if ( hp = 5 ) {
-    player.src = "images/hp/hp5.PNG";
-  }
-}
-function hpCheck() {
-  drawHp(player1Hp, myHp);
-  drawHp(player2Hp, enemyHp);
   if ( focus == 7 ) {
     if(myHp > enemyHp) {
       textChange("승리~");
