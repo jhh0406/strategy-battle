@@ -60,12 +60,14 @@ function gameFinish() {
 function drawHp(player, hp){
   if (myHp <= 0) {
     myHp = 0;
-  } else if (enemyHp <= 0) {
+  }
+  if (enemyHp <= 0) {
     enemyHp = 0;
   }
   if (myHp >= 5) {
     myHp = 5;
-  } else if (enemyHp >= 5) {
+  }
+  if (enemyHp >= 5) {
     enemyHp = 5;
   }
   if ( hp = 0 ) {
