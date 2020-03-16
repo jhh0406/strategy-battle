@@ -13,7 +13,9 @@ function tutorial() {
 }
 function drawTier() {
   if (score >= 16) {
-    alert(`당신은 ${score}점입니다.`);
+    tierScoreChange(5);
+    alert(`당신은 랭커 ${score}점입니다.`);
+    tierChange("ranker");
   } else if (score >= 11) {
     tierChange("gold");
   } else if (score >= 6) {
